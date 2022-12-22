@@ -1,4 +1,4 @@
-const config = require('../config/auth.config.js');
+require("dotenv").config();
 const db = require('../models/index');
 const User =  db.user;
 const Role = db.role;
@@ -90,7 +90,7 @@ exports.signin = async (req, res) => {
     }
 
     //*id is the string version of the _id property which is of type ObjectID
-    var token =  await jwt.sign({id:currentUser.id}, config.secret ,{expiresIn:86400}); //* Expires in one day
+    var token =  await jwt.sign({id:currentUser.id}, process.env.JWT_SECRET ,{expiresIn:86400}); //* Expires in one day
     var positions = [];
 
 

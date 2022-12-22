@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const cookieSession = require('cookie-session');
 const cors = require('cors');
@@ -8,7 +9,7 @@ const searchRoute = require('./routes/search-route');
 const usersRoute = require('./routes/users-route');
 const rolesRoute = require('./routes/roles-route');
 const truthRoute = require('./routes/truth-route');
-const dotenv = require('dotenv');
+
 
 const corsOptions = {
   origin : "*",
@@ -18,7 +19,6 @@ const corsOptions = {
   ]
 };
 
-dotenv.config({path:'./config/config.env'})
 
 const app = express();
 
