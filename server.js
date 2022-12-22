@@ -1,6 +1,6 @@
+require("dotenv").config();
 const app = require('./app');
 const express = require('express');
-const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
 const port = process.env.PORT || 3250;
@@ -10,7 +10,6 @@ const db = require('./models/index');
 const Role = db.role;
 const ROLES = db.ROLES;
 
-dotenv.config({path:'./config/config.env'})
 
 const DB_CONN = process.env.NODE_ENV === 'production' ?
 process.env.DATABASE_PRODUCTION.replace('<PWD>' , process.env.DATABASE_PASSWORD) : process.env.DATABASE;
